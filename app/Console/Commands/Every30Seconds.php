@@ -70,11 +70,11 @@ class Every30Seconds extends Command
 
             echo "\nValue inserted in DB";
             Log::channel('scheduler')->info('Value inserted in DB..');
-            //sleep(45) is added to mimic that the process is running for 45 seconds 
+            //sleep(75) is added to mimic that the process is running for 75 seconds 
             //before completing..
             sleep(75);
 
-            //After 45 seonds have passed update the process status in table
+            //After 75 seonds have passed update the process status in table
             DB::table('process_status')->where('id',$processId)->update(array(
                 'end_time'=>now(),
                 'status' => 1
